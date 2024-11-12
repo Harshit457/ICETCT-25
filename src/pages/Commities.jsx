@@ -3,7 +3,7 @@
     function Commities() {
       return (
         <div>
-          Commities
+          
         </div>
       )
     }
