@@ -1,14 +1,37 @@
+import React, { Suspense } from "react";
 
-import './App.css'
-
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+const Home = React.lazy(() => import("./pages/Home"));
+const Registration = React.lazy(() => import("./pages/Registration"));
+const Speaker = React.lazy(()=> import("./pages/Speaker"));
+const Submission = React.lazy(()=> import("./pages/Submission"));
+const Contact = React.lazy(()=> import("./pages/Contact"))
+const Commities = React.lazy(()=> import("./pages/Commities"))
+const Accomodation = React.lazy(()=> import("./pages/Accomodation"))
 function App() {
- 
-
   return (
-    <>
-      <div className='text-5xl text-center'> hello</div>
-    </>
-  )
+    <div>
+      <Router>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Routes>
+            <Route path="/" element={<Home></Home>} />
+            <Route path="/Registration" element={<Registration></Registration>} />
+            <Route path="/Speaker" element={<Speaker></Speaker>}></Route>
+            <Route
+              path="/Submission"
+              element={<Submission></Submission>}
+            ></Route>
+            <Route
+              path="/Contact"
+              element={<Contact></Contact>}
+            ></Route>
+            <Route path="/Commities" element={<Commities></Commities>}></Route>
+            <Route path="/Accomodation" element={<Accomodation></Accomodation>}></Route>
+          </Routes>
+        </Suspense>
+      </Router>
+    </div>
+  );
 }
 
-export default App
+export default App;
