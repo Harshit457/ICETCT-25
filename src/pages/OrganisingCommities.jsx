@@ -1,8 +1,13 @@
 import React from "react";
-
+import Navbar from "../Components/Navbar/Navbar";
 function OrganisingCommities() {
   return (
-    <div>
+    <div className="bg-cyan-600">
+      <Navbar></Navbar>
+      <br />
+      <br />
+      <br />
+      <br />
       <div className="flex justify-center items-center text-2xl font-bold ">
         Organising Committee
       </div>
